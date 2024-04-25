@@ -1,0 +1,44 @@
+import pandas as pd
+mydataset = {
+    "car" : ["bmw", "volvo", "ford"],
+     "passings" : [3, 7, 5]
+     }
+myvar = pd.DataFrame(mydataset)
+
+print(myvar)
+
+a = [1, 7, 2]
+
+myvar = pd.Series(a)
+
+print(myvar)
+
+a = [1, 2, 8, 9]
+
+myvar = pd.Series(a, index = ["R", "M", "A", "T"])
+
+print(myvar["M"])
+
+data = { "cosmetic" : ["Mascara", "Lip glass", "Concealer", "Powder"],
+         "price" : [50, 15, 25, 30]
+    }
+#load data into a DataFrame object:
+df = pd.DataFrame(data)
+print(df)
+
+#refer to the row index:
+print(df.loc[0])
+
+#use a list of indexes:
+print(df.loc[[0,2,3]])
+
+df = pd.DataFrame(data, index=["M", "L", "C", "P"])
+print(df)
+
+#refer to the named index:
+print(df.loc["L"])
+
+#use a list of indexes:
+print(df.loc[["M", "L"]])
+
+
