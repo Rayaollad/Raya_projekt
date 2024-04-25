@@ -1,0 +1,18 @@
+fragen = [
+    {"frage": "Was ist die Hauptstadt von Deutschland?", "antwort": "Berlin"},
+    {"frage": "Wie viele Kontinente gibt es auf der Erde?", "antwort": "sieben"},
+    {"frage": "Welches Element hat das chemische Symbol 'O'?", "antwort": "Sauerstoff"}
+]
+
+
+punktzahl = 0
+
+for frage in fragen:
+    antwort = input(frage = ["farge"] + " ")
+    if antwort.lower() == frage["antwort"].lower():
+        print("Richtig!")
+        punktzahl +=1
+    else:
+        print("Leider falsch. Die Richtige Antwort ist:", frage["antwort"])
+
+print(f"Deine Endpunktzahl ist: {punktzahl} von {len(fragen)}")        
