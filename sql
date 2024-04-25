@@ -1,0 +1,173 @@
+select * from orders
+where customer_id=7 and price<1000;
+
+SELECT first_name,last_name,points from customers
+where country = "spanian"
+
+select products from orders 
+where price>1200 and price<1400
+
+select * from orders 
+where price<1200 and customer_id=6
+
+select * from customers
+where  customer_id=4 or country= "Germany"
+
+select * from  orders 
+where customer_id in (1,4)
+
+select * from orders 
+where price between 1000 and 1300
+
+select * from orders 
+where order_id between 4 and 9
+order by price Desc
+
+select * from orders 
+where products like "Ga%"
+
+select * from customers
+where first_name like "__n%" or last_name like "F%n"
+
+select first_name, (points+10)*2 as point_and_bonus 
+from customers
+where points>2000
+order by point_and_bonus desc
+
+select distinct customer_id 
+from orders 
+where price = 1100
+
+select * from customers 
+where points>50
+order by points desc 
+limit 1,2
+
+select min(price) from orders 
+select max(price) from orders
+
+select count(price)
+as p_order from orders
+
+select sum(points)
+as s_points from customers 
+
+select sum(points)
+as s_point from customers
+where country="Spanian" and last_name="Ollad" or country="Germany"
+
+select avg(price)
+as a_price from orders
+
+select avg(price)
+as a_price from orders
+where customer_id in (7,6)
+
+select sum(price)
+as s_price from orders 
+where order_id not between 4 and 8
+
+select * from orders 
+where price between 1000 and 1300 and customer_id in ( 1,4,6)
+order by order_id desc
+
+select count(customer_id),country
+from customers
+group by country 
+
+select customer_id from customers 
+group by country 
+
+select * from customers c
+join orders o
+on c.customer_id=o.customer_id
+
+select count(products) from orders
+where products= "iphone 13 pro"
+
+select avg(price) from orders
+where customer_id=2
+
+select count(products) from orders 
+
+select count(customer_id) from customers
+where country="Spanian"
+
+select distinct count(products) as p_count
+from orders 
+where products like "%o" or price<1200 
+
+select customer_id , avg(price) as avg_price , 
+       count(order_id) as total_orders
+from orders 
+group by customer_id
+order by avg_price desc
+
+select count(o.products),c.customer_id
+from orders o
+join customers c
+on o.customer_id=c.customer_id and country="germany"
+group by customer_id
+
+select count(customer_id),country
+from customers
+group by country
+
+select distinct count(products),price
+from orders 
+group by price
+order by price desc
+
+select customer_id
+from orders 
+group by order_id 
+having sum(order_id>2) 
+
+select * from orders o
+left join customers c 
+on o.customer_id=c.customer_id 
+
+select customer_id from customers c
+join orders o
+using(customer_id)
+group by customer_id
+having count(order_id)>=2
+order by customer_id desc
+
+select country from customers 
+group by country
+having count(customer_id)=1
+
+select count(o.products) as T_product
+from orders o
+join customers c
+on o.customer_id=c.customer_id and c.first_name="Tara"
+group by products
+having sum(price)>500
+
+select  count(products) from orders 
+where price<1200
+
+select o.products,c.first_name,c.last_name,c.points
+from orders o
+join customers c
+on o.customer_id=c.customer_id 
+and price between 1200 and 1400
+order by points desc
+ 
+select products, max(price) from orders
+group by products
+having min(price)>1200
+
+select customer_id,first_name,points from customers
+where last_name="Ollad" or points>=4000 
+
+select customer_id,first_name,last_name,points
+from customers
+where points>1000
+union
+select customer_id,first_name,last_name,points
+from customers
+where points<1200
+
+
