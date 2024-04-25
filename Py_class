@@ -1,0 +1,32 @@
+class person:
+    count = 0
+    def __init__(self, name, last_name, age):
+        self.name = name
+        self.last_name = last_name
+        self.age = age
+        person.count = person.count + 1
+    def get_name(self):
+        print("name is %s" % self.name)
+    def get_last_name(self):
+        print("last name is %s" % self.last_name)
+    def get_age(self):
+        print("age is %i" % self.age)
+    def get_info(self):
+        print("name is %s and last_name is %s and age is %i" % (self.name, self.last_name, self.age))
+    def birthay(self):
+        self.age = self.age + 1
+        print("happy birthday %s" % self.name)
+    def return_count(self):
+        return (person.count)
+
+ollad = person("Raya", "ollad", 30)
+ollad.get_name()
+ollad.get_age()
+ollad.get_info()
+mahan = person("mahan", "mousavi", 36)
+mahan.get_info()
+tara = person("tara", "ollad", 25)
+tara.get_info()
+tara.birthay()
+
+print("at the moment i have %i persons" % ollad.return_count())
